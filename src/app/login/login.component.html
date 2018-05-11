@@ -1,0 +1,24 @@
+<div [@routerTransition]>
+    <h2 class="text-muted">Dashboard <small>Web Service Overview</small></h2>
+    <mat-card>
+  <mat-card-content>
+          <form novalidate class="form-inline">
+            <ng4geo-autocomplete [userSettings]="userSettings" class="address" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+          </form>
+        <div class="demo-tab-content">
+          <div class="row">
+              <div class="col-md-12">
+                  <ngb-carousel>
+                      <ng-template ngbSlide *ngFor="let slider of photos">
+                          <img class="img-fluid mx-auto d-block" [src]="slider.url" alt="Random first slide" width="100%">
+                          <div class="carousel-caption">
+                              <span *ngFor="let desc of slider.descriptions" [innerHTML]="desc"></span>
+                          </div>
+                      </ng-template>
+                  </ngb-carousel>
+              </div>
+          </div>
+        </div>
+  </mat-card-content>
+</mat-card>
+</div>
